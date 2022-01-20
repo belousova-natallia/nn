@@ -1,0 +1,134 @@
+.container {
+  max-width: 625px;
+  margin: 20px auto;
+  padding: 5px;
+}
+
+///header
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.presets {
+  display: flex;
+  div {
+    border: 1px solid #265a77;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-right: 8px;
+    padding: 8px 12px;
+    &:hover,
+    &:focus,
+    &.selected {
+      background: #3681aa;
+      color: white;
+    }
+  }
+}
+
+.searchField {
+  height: 32px;
+  width: 190px;
+}
+
+////main
+.categoriesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height: 250px;
+  border: 1px solid #e5e5e5;
+  background: #f9f9f9;
+  overflow: auto;
+}
+.categoryElementContainer {
+  display: flex;
+  margin: 10px;
+  height: 30px;
+  width: 100%;
+  max-width: 30%;
+  align-items: center;
+
+  @media only screen and (max-width: 600px) {
+    & {
+      max-width: 40%;
+    }
+  }
+
+  .awesomeIcon {
+    font-size: 30px;
+    background: #265a77;
+    border-left: 2px solid #265a77;
+    border-right: 2px solid #265a77;
+    border-radius: 4px;
+  }
+}
+.categoryElement {
+  padding-left: 10px;
+}
+
+//footer
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  min-height: 48px;
+  background: #e5e5e5;
+}
+
+.filterCategories {
+  display: flex;
+  &_label {
+    padding-right: 20px;
+  }
+
+  &_button {
+    padding: 3px 10px;
+    margin: 0 5px;
+    border: 1px solid #265a77;
+    border-radius: 15px;
+    height: 20px;
+
+    &.selected {
+      background: #3681aa;
+      color: white;
+    }
+  }
+}
+
+.switchPreset_button {
+  display: flex;
+  div {
+    padding: 7px 10px;
+    margin: 0 5px;
+    border: 1px solid #265a77;
+    background: #265a77;
+    color: white;
+    border-radius: 4px;
+    max-height: 32px;
+  }
+}
+.tooltipIcon {
+  margin: 10px;
+  background: #265a77;
+  font-size: 12px;
+  border-radius: 10px;
+}
+[data-tooltip]:before {
+  position: absolute;
+  content: attr(data-tooltip);
+  opacity: 0;
+  background: #265a77;
+  color: white;
+}
+[data-tooltip]:hover:before {
+  opacity: 1;
+}
